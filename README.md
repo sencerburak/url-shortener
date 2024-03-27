@@ -1,4 +1,4 @@
-# Project Name
+# Url Shortener Service
 
 This is a project that aims to create a URL shortener service.
 
