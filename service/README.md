@@ -97,7 +97,10 @@ The service exposes the following API endpoints:
 1. **Shorten a URL**
 
 ```bash
-curl -X POST http://localhost:3000/shorten -H "Content-Type: application/json" -d '{ "url": "https://example.com" }'
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"url": "www.example.com"}' \
+  localhost:3000/shorten
 ```
 
 2. **Access the Shortened URL**

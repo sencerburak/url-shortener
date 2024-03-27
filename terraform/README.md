@@ -6,6 +6,27 @@ Welcome to the infrastructure documentation for the URL Shortener Service. This 
 
 The URL Shortener Service infrastructure is built on AWS, leveraging managed services for high availability and performance. The architecture is designed to be scalable, with the ability to handle high volumes of traffic and data. Key components include Amazon Elastic Container Service (ECS) for container orchestration, DynamoDB for fast and flexible NoSQL data storage, CloudWatch for monitoring and logs management, and an Application Load Balancer (ALB) for efficient traffic distribution.
 
+## Architecture Diagram
+
+The following diagram illustrates the high-level architecture of the URL Shortener Service infrastructure:
+
+```plaintext
++--------+     +------------------+     +-------------------+
+|        |     |                  |     |                   |
+|  User  +---->+ Application Load +---->+  ECS Service      |
+|        |     | Balancer (ALB)   |     | (URL Shortening   |
++--------+     +------------------+     | Service Container)|
+                                        |                   |
+                                        +---------+---------+
+                                                  |
+                                                  |   +---------------------+
+                                                  |   |                     |
+                                                  +--->  DynamoDB           |
+                                                      | (URL Mappings Table)|
+                                                      |                     |
+                                                      +---------------------+
+```
+
 ## Prerequisites
 
 Before you begin the deployment process, please ensure you have the following tools and accounts set up:
