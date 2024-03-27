@@ -1,0 +1,53 @@
+{
+  "name": "service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "clean": "rm -rf dist && rm -rf node_modules && rm -rf package-lock.json && rm -rf yarn.lock && rm -rf docs",
+    "test": "jest",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "update-readme": "md-magic --ignore 'node_modules'",
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "prettier": "prettier --write .",
+    "docs": "typedoc --entryPointStrategy expand ./src",
+    "tf-destroy": "terraform -chdir='../terraform/' destroy -auto-approve",
+    "tf-deploy": "terraform -chdir='../terraform/' init && terraform -chdir='../terraform/' apply -auto-approve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.540.0",
+    "express": "^4.19.1",
+    "express-async-handler": "^1.2.0",
+    "shortid": "^2.2.16",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@aws-sdk/lib-dynamodb": "^3.540.0",
+    "@aws-sdk/types": "^3.535.0",
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.30",
+    "@types/shortid": "^0.0.32",
+    "@types/supertest": "^6.0.2",
+    "@types/uuid": "^9.0.8",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "aws-sdk-client-mock": "^4.0.0",
+    "aws-sdk-mock": "^5.9.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "markdown-magic": "^2.6.1",
+    "prettier": "^3.2.5",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2",
+    "typedoc": "^0.25.12",
+    "typescript": "^5.4.3"
+  }
+}
